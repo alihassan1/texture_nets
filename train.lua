@@ -21,17 +21,17 @@ local cmd = torch.CmdLine()
 cmd:option('-content_layers', 'relu4_2', 'Layer to attach content loss.')
 cmd:option('-style_layers', 'relu1_1,relu2_1,relu3_1,relu4_1', 'Layer to attach style loss.')
 
-cmd:option('-learning_rate', 1e-3)
+cmd:option('-learning_rate', 1e-1)
 
 cmd:option('-num_iterations', 50000, 'Number of steps to perform.')
-cmd:option('-save_every', 1000, 'Save model every N iterations.')
+cmd:option('-save_every', 5000, 'Save model every N iterations.')
 cmd:option('-batch_size', 1)
 
-cmd:option('-image_size', 256, 'Training images size')
+cmd:option('-image_size', 512, 'Training images size')
 
-cmd:option('-content_weight', 1)
-cmd:option('-style_weight', 1)
-cmd:option('-tv_weight', 0, 'Total variation weight.')
+cmd:option('-content_weight', 15)
+cmd:option('-style_weight', 100)
+cmd:option('-tv_weight', 1e-3, 'Total variation weight.')
 
 cmd:option('-style_image', '', 'Path to style image')
 cmd:option('-style_size', 256, 'Resize style image to this size, no resize if 0.')
